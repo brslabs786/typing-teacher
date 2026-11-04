@@ -17,14 +17,24 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/race.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/style.css?v=3" />
+  <link rel="stylesheet" href="css/race.css?v=3" />
+  <link rel="stylesheet" href="css/responsive.css?v=3" />
 
   <style>
     /* Inline critical — font override */
     body { font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; }
     .passage-display, .typing-input, .key { font-family: 'JetBrains Mono', monospace; }
+    .logo img, .logo-img, .brand-logo-img {
+      width: 36px !important;
+      height: 36px !important;
+      max-width: 36px !important;
+      max-height: 36px !important;
+      border-radius: 8px !important;
+      object-fit: cover !important;
+      flex-shrink: 0 !important;
+      display: inline-block !important;
+    }
   </style>
 </head>
 <body>
@@ -36,7 +46,7 @@
   <header>
     <div class="header-inner">
       <a class="logo" href="#" onclick="App.showView('dashboard'); App.renderDashboard(); return false;">
-        <img src="favicon.png" alt="KeySprint Logo" class="logo-img" />
+        <img src="favicon.png" alt="KeySprint Logo" class="logo-img brand-logo-img" width="36" height="36" style="width:36px;height:36px;max-width:36px;max-height:36px;object-fit:cover;border-radius:8px;flex-shrink:0;" />
         <span class="logo-name">Key<span>Sprint</span></span>
       </a>
       <nav>
