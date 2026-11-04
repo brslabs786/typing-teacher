@@ -1,0 +1,147 @@
+/* ══════════════════════════════════════════════════════════
+   responsive.css — Media queries and mobile layout
+══════════════════════════════════════════════════════════ */
+
+/* ── Tablet (≤ 900px) ────────────────────────────────────── */
+@media (max-width: 900px) {
+  .dash-grid { grid-template-columns: 1fr; }
+  .grid-2    { grid-template-columns: 1fr; }
+  .grid-3    { grid-template-columns: 1fr 1fr; }
+  .grid-4    { grid-template-columns: 1fr 1fr; }
+  .results-stats { grid-template-columns: 1fr 1fr; }
+
+  .dash-hero h1 { font-size: 2rem; }
+
+  .race-setup {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .race-track-container {
+    margin: 0 12px 20px;
+  }
+
+  .race-typing-area {
+    margin: 0 12px;
+  }
+
+  .race-top-bar { flex-direction: column; align-items: flex-start; }
+
+  .live-stats { gap: 10px; }
+}
+
+/* ── Mobile (≤ 600px) ────────────────────────────────────── */
+@media (max-width: 600px) {
+  :root { font-size: 15px; }
+
+  .header-inner { padding: 0 16px; height: 56px; }
+  .logo-name { font-size: 1.1rem; }
+
+  nav { gap: 2px; margin-left: 10px; }
+  .nav-btn { padding: 5px 10px; font-size: 0.8rem; }
+
+  .dash-hero { padding: 32px 16px 24px; }
+  .dash-hero h1 { font-size: 1.7rem; }
+  .dash-hero p  { font-size: 0.95rem; }
+
+  .dash-actions { flex-direction: column; align-items: center; }
+  .dash-actions .btn { width: 100%; max-width: 300px; justify-content: center; }
+
+  .dash-grid { margin: 0 16px 16px; }
+  .dash-chart-container { margin: 0 16px 16px; }
+
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr; }
+
+  .results-card {
+    margin: 24px 16px;
+    padding: 24px 20px;
+  }
+
+  .results-stats { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .results-actions { flex-direction: column; align-items: stretch; }
+  .results-actions .btn { justify-content: center; }
+
+  .results-progress { flex-direction: column; gap: 10px; }
+  .results-comparison { grid-template-columns: 1fr; gap: 8px; text-align: center; }
+  .finger-guidance { flex-direction: column; gap: 6px; text-align: center; }
+  .guidance-sep { display: none; }
+
+  .passage-display { font-size: 1rem; padding: 14px; }
+
+  .race-track-container { margin: 0 12px 16px; }
+  .track-road { height: 290px; }
+
+  .countdown-num { font-size: 5rem; }
+
+  .race-typing-area {
+    margin: 0 12px;
+    padding: 16px;
+  }
+
+  .live-stats { gap: 8px; }
+  .live-stat { padding: 8px 12px; min-width: 60px; }
+  .live-stat .live-value { font-size: 1.2rem; }
+
+  .test-setup-card { padding: 28px 20px; margin: 24px 16px 0; }
+  .test-duration-btns { gap: 12px; }
+  .test-duration-btn { padding: 16px 24px; }
+  .test-duration-btn .dur-num { font-size: 2rem; }
+
+  #test-active { padding: 0 16px; }
+  .test-timer-display { font-size: 2.4rem; }
+
+  #practice-menu { padding: 24px 16px 0; }
+  #practice-session { padding: 24px 16px 0; }
+
+  .visual-keyboard .key { min-width: 28px; height: 28px; font-size: 0.65rem; }
+  .visual-keyboard .key-special { min-width: 42px; font-size: 0.55rem; }
+  .visual-keyboard .key-space { min-width: 160px; }
+  .key-row { gap: 3px; }
+  .visual-keyboard { gap: 3px; }
+
+  .card { padding: 18px 16px; }
+
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.3rem; }
+
+  .page-title { padding: 24px 16px 0; }
+  .page-subtitle { padding: 0 16px; }
+}
+
+/* ── Very small (≤ 400px) ───────────────────────────────── */
+@media (max-width: 400px) {
+  .nav-btn { padding: 4px 7px; font-size: 0.75rem; }
+  .logo-name { display: none; }
+
+  .visual-keyboard .key { min-width: 24px; height: 26px; font-size: 0.6rem; }
+  .visual-keyboard .key-special { min-width: 36px; }
+  .visual-keyboard .key-space { min-width: 130px; }
+
+  .passage-display { font-size: 0.9rem; }
+  .live-stat .live-value { font-size: 1.1rem; }
+
+  .test-duration-btns { flex-direction: column; align-items: center; }
+  .test-duration-btn { width: 200px; }
+}
+
+/* ── Dark mode (already dark, no-op — here for override potential) ── */
+@media (prefers-color-scheme: light) {
+  /* Keep the dark theme even in light OS mode — it's intentional gaming aesthetic */
+}
+
+/* ── Reduced motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .race-car { transition: none; }
+}
+
+/* ── Print ──────────────────────────────────────────────── */
+@media print {
+  header, nav, .dash-actions, .results-actions { display: none; }
+  body { background: white; color: black; }
+}
